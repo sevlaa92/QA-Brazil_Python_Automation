@@ -42,3 +42,11 @@ def is_url_reachable(url):
 
         with urllib.request.urlopen(url, context=ssl_ctx) as response:
             # print("Código de status da resposta:", response.status)# para fins de depuração
+            if response.status == 200:
+                 return True
+            else:
+                return False
+    except Exception as e:
+        print (e)
+
+    return False
